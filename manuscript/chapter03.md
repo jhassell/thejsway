@@ -1,6 +1,6 @@
 # Add conditions
 
-Up until now, all the code in our programs has been executed chronologically. Let's enrich our code by adding conditional execution!
+Up until now, all the code in our programs has been executed linearly. Let's enrich our code by adding conditional execution!
 
 ## TL;DR
 
@@ -12,7 +12,7 @@ if (condition) {
 }
 ```
 
-* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve visibility, its statements are generally **indented** (shifted to the right).
+* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve visibility, the code block's statements are generally **indented** (shifted to the right).
 
 * The **comparison operators** `===`, `!==`, `<`, `<=`, `>` et `>=` are used to compare numbers inside a condition. All of them return a boolean result.
 
@@ -27,7 +27,7 @@ else {
 }
 ```
 
-* Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") et `!` ("not").
+* Complex conditions can be created using the following **logical operators**: `&&` ("and"), `||` ("or") , `!` ("not").
 
 * The `switch` statement is used to kick off the execution of one code block among many, depending on the value of an expression.
 
@@ -47,7 +47,7 @@ default:
 
 ## What's a condition?
 
-Suppose we want to write a program that makes enter a number to the user, who then displays a message if the number is positive. Here the corresponding algorithm.
+Suppose we want to write a program that asks a user to enter a number, and then displays a message if the number is positive. Here is the corresponding algorithm.
 
 ```text
 Enter a number
@@ -55,7 +55,7 @@ If the number is positive
     Display a message
 ```
 
-The message should display only if the number is positive: this means it's "subject" to a **condition**.
+The message should display only if the number is positive; this means the message display is "subject" to a **condition**.
 
 ### The `if` statement
 
@@ -80,13 +80,13 @@ if (condition) {
 
 The pair of opening and closing braces defines the block of code associated with an `if` statement. This statement represents a **test**. It results in the following: "If the condition is true, then executes the instructions contained in the code block".
 
-The condition is always placed in parentheses after the `if`. The statements within the associated code block are shifted to the right. This practice is called **indentation** and helps make your code more readable. As your programs grow in size and complexity, it will become more and more important. The indentation value is often 2 or 4 spaces.
+The condition is always placed in parentheses after the `if`. The statements within the associated code block are shifted to the right. This practice is called **indentation** and helps make your code more readable. As your programs grow in size and complexity, it will become more and more important. The indentation is often 2 or 4 spaces.
 
-I> When the code block has only one statement, braces may be omitted. As a beginner, you should nonetheless always use braces when writing your first conditions.
+When the code block has only one statement, braces may be omitted. As a beginner, you should nonetheless always use braces when writing your first conditions as a good coding practice.
 
 ### Conditions
 
-A **condition** is an expression that evaluates as a value either true or false: it's called a **boolean** value. When the value of a condition is true, we say that this condition is satisfied.
+A **condition** is an expression that evaluates as a value of either true or false: it's called a **boolean** value. When the value of a condition is true, we say that this condition is satisfied.
 
 We have already studied numbers and strings, two types of data in JavaScript. Booleans are another type. This type has only two possible values: `true` and `false`.
 
@@ -116,7 +116,7 @@ Boolean expressions can be created using the comparison operators shown in the f
 
 In some other programming languages, equality and inequality operators are `==` and `!=`. They also exist in JavaScript, but it's safer to use `===` and `!==` ([more details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)).
 
-E> It's easy to confuse comparison operators like `===` (or `==`) with the assignment operator `=`. They're very, very different. Be warned!
+It's easy to confuse comparison operators like `===` (or `==`) with the assignment operator `=`. They're very, very different. Be warned!
 
 Now let's modify the example code to replace `>` with `>=` and change the message, then test it with the number 0.
 
@@ -131,7 +131,7 @@ If the user input is 0, the message appears in the console, which means that the
 
 ## Alternative conditions
 
-You'll often want to have your code execute one way when something's true and another way when something's false.
+You'll often want to have your code execute one way when something is true and another way when something is false.
 
 ### The `else` statement
 
@@ -164,7 +164,7 @@ You can translate an `if`/`else` statement like this: "If the condition is true,
 
 ### Nesting conditions
 
-Let's go next level and display a specific message if the entered number is zero. See this example, which has a positive test case, negative test case, and a last resort of the number being zero.
+Let's go to the next level and display a specific message if the entered number is zero. See this example, which has a positive test case, a negative test case, and a last resort case for when the number is zero.
 
 ```js
 const number = Number(prompt("Enter a number:"));
@@ -189,9 +189,9 @@ The execution flow for the previous program can be expressed graphically using a
 
 ![Example flow diagram](images/chapter03-01.png)
 
-This example shows how essential indentation is for understanding a program's flow. There is no limit to the possible depth of condition nesting, but too many will affect program visibility.
+This example shows how essential indentation is for understanding a program's flow. There is no limit to the possible depth of condition nesting, but too many conditional levels will affect program visibility.
 
-A particular case happens when the only statement in a `else` block is an `if`. In that case, you can write this `else` on the same line as the `if` and without braces. Here's a more concise way to write our example program.
+A particular case happens when the only statement in an `else` block is an `if`. In that case, you can write this `else` on the same line as the `if` and without braces. Here's a more concise way to write our example program.
 
 ```js
 const number = Number(prompt("Enter a number:"));
@@ -208,9 +208,9 @@ if (number > 0) {
 
 ### "And" operator
 
-Suppose you want to check if a number is between 0 and 100. You're essentially checking if it's "greater than or equal to 0" and "less than or equal to 100". Both sub-conditions must be satisfied at the same time.
+Suppose you want to check if a number is between 0 and 100. You're essentially checking if it is "greater than or equal to 0" and "less than or equal to 100". Both sub-conditions must be satisfied at the same time.
 
-I> The expression `0 <= nombre <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (neither in most other programming languages).
+I> The expression `0 <= nombre <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (and neither in most other programming languages).
 
 Here's how you'd translate that same check into JS.
 
@@ -220,7 +220,7 @@ if ((number >= 0) && (number <= 100)) {
 }
 ```
 
-I> Parentheses between sub-conditions are not mandatory but I advise you to add them anyway, to avoid nasty bugs in some special cases.
+I> Parentheses between sub-conditions are not mandatory but I advise you to add them anyway to avoid nasty bugs in some special cases.
 
 The `&&` operator ("logical and") can apply to both types of boolean values. `true` will only be the result of the statement if both conditions are true.
 
@@ -350,9 +350,9 @@ The previous example show `"x = abc"` (the correct result) but also `"x = def"`.
 
 ## Coding time!
 
-Here are a few advice about these exercises:
+Here are a few tips about these exercises:
 
-* Keep on choosing your variable names wisely, and respect indentation when creating code blocks associated to `if`, `else` and `switch` statements.
+* Keep on choosing your variable names wisely, and respect indentation when creating code blocks associated with `if`, `else` and `switch` statements.
 
 * Try to find alternative solutions. For example, one using an `if` and another using a `switch`.
 
@@ -364,7 +364,7 @@ Write a program that accepts a day name from the user, then shows the name of th
 
 ### Number comparison
 
-Write a program that accepts two numbers, then compare their values and displays an appropriate message in all cases.
+Write a program that accepts two numbers, then compares their values and displays an appropriate message in all cases.
 
 ### Final values
 
@@ -405,7 +405,7 @@ Write a program that accepts a month number (between 1 and 12), then shows the n
 
 ### Following second
 
-Write a program that asks for a time under the form of three information (hours, minutes, seconds). The program calculates and shows the time one second after. Incorrect inputs must be taken into account.
+Write a program that asks for a time under the form of three quantities (hours, minutes, seconds). The program should calculates and display the time one second after your entered time. Incorrect inputs must be taken into account.
 
 > This is not as simple as it seems... Look at the following results to see for yourself:
 >
